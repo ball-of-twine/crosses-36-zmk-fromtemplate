@@ -17,16 +17,25 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        combo_mods {
+            bindings = <&mo 5>;
+            key-positions = <30 31>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         colemak {
             display-name = "Colemak";
             bindings = <
-&as LS(Q) Q  &as LS(W) W  &as LS(F) F  &as LS(P) P  &as LS(B) B  &as LS(J) J  &as LS(L) L  &as LS(U) U          &as LS(Y) Y            &as LS(SEMICOLON) SEMICOLON
-&as LS(A) A  &as LS(R) R  &as LS(S) S  &as LS(T) T  &as LS(G) G  &as LS(M) M  &as LS(N) N  &as LS(E) E          &as LS(I) I            &as LS(O) O
-&as LS(X) X  &as LS(C) C  &as LS(D) D  &as LS(V) V  &as LS(Z) Z  &as LS(K) K  &as LS(H) H  &as LS(COMMA) COMMA  &as LS(PERIOD) PERIOD  &as LS(SLASH) SLASH
-                          &mo 2        &kp SPACE    &lt 5 BSPC   &kp TAB      &kp RET      &mo 3
+&as LS(Q) Q  &as LS(W) W  &as LS(F) F  &as LS(P) P  &as LS(B) B    &as LS(J) J  &as LS(L) L  &as LS(U) U          &as LS(Y) Y            &as LS(SEMICOLON) SEMICOLON
+&as LS(A) A  &as LS(R) R  &as LS(S) S  &as LS(T) T  &as LS(G) G    &as LS(M) M  &as LS(N) N  &as LS(E) E          &as LS(I) I            &as LS(O) O
+&as LS(X) X  &as LS(C) C  &as LS(D) D  &as LS(V) V  &as LS(Z) Z    &as LS(K) K  &as LS(H) H  &as LS(COMMA) COMMA  &as LS(PERIOD) PERIOD  &as LS(SLASH) SLASH
+                          &mo 2        &kp SPACE    &kp BACKSPACE  &kp TAB      &kp RET      &mo 3
             >;
         };
 
@@ -53,10 +62,10 @@
         punctuation_and_numbers {
             display-name = "Punc+Nums";
             bindings = <
-&trans    &trans     &kp LS(LBRC)  &kp LS(RBRC)  &kp LS(UNDER)  &kp ASTRK               &kp N7  &kp N8  &kp N9  &as KP_EQUAL PLUS
-&trans    &trans     &kp LS(LPAR)  &kp LS(RPAR)  &kp EQUAL      &kp DOT                 &kp N4  &kp N5  &kp N6  &kp N0
-&kp CAPS  &kp GRAVE  &kp LBKT      &kp RBKT      &kp BSLH       &as BACKSLASH KP_SLASH  &kp N1  &kp N2  &kp N3  &as UNDER MINUS
-                     &kp ESC       &kp SPACE     &kp LGUI       &kp TAB                 &mo 4   &trans
+&trans    &trans                          &kp LS(LBRC)  &kp LS(RBRC)  &kp LS(UNDER)  &kp ASTRK               &kp N7  &kp N8  &kp N9  &as KP_EQUAL PLUS
+&trans    &as DOUBLE_QUOTES SINGLE_QUOTE  &kp LS(LPAR)  &kp LS(RPAR)  &kp EQUAL      &kp DOT                 &kp N4  &kp N5  &kp N6  &kp N0
+&kp CAPS  &as GRAVE TILDE                 &kp LBKT      &kp RBKT      &kp BSLH       &as BACKSLASH KP_SLASH  &kp N1  &kp N2  &kp N3  &as UNDER MINUS
+                                          &kp ESC       &kp SPACE     &trans         &kp TAB                 &mo 4   &trans
             >;
         };
 
@@ -77,6 +86,15 @@
 &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHIFT  &kp K_APP  &kp K_APP  &kp RSHIFT  &kp RCTRL  &kp RALT  &kp RGUI
 &trans    &trans    &trans     &trans      &trans     &trans     &trans      &trans     &trans    &trans
                     &trans     &trans      &trans     &trans     &trans      &trans
+            >;
+        };
+
+        dyn_mouse {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans     &msc SCRL_UP    &trans
+&trans  &trans  &trans  &trans  &trans  &mkp LCLK  &mkp MCLK  &mkp RCLK  &msc SCRL_DOWN  &trans
+&trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans     &trans          &trans
+                &trans  &trans  &trans  &trans     &trans     &trans
             >;
         };
     };
