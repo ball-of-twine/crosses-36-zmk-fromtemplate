@@ -1,4 +1,5 @@
 &spi0 {
   trackball_central: trackball_central@0 { 
     cpi = <300>;
+  };
 };
