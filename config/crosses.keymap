@@ -21,7 +21,7 @@
         compatible = "zmk,keymap";
 
         colemak {
-            display-name = "Base";
+            display-name = "Colemak";
             bindings = <
 &as LS(Q) Q  &as LS(W) W  &as LS(F) F  &as LS(P) P  &as LS(B) B  &as LS(J) J  &as LS(L) L  &as LS(U) U          &as LS(Y) Y            &as LS(SEMICOLON) SEMICOLON
 &as LS(A) A  &as LS(R) R  &as LS(S) S  &as LS(T) T  &as LS(G) G  &as LS(M) M  &as LS(N) N  &as LS(E) E          &as LS(I) I            &as LS(O) O
@@ -38,12 +38,9 @@
 &kp Z  &kp X  &kp C   &kp V   &kp B   &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH
               &trans  &trans  &trans  &trans  &trans  &trans
             >;
-
-            label = "qwerty";
         };
 
         nav_layer {
-            display-name = "Mouse&Nav";
             display-name = "Mouse+Nav";
             bindings = <
 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans  &kp HOME  &kp UP    &kp END    &kp PAGE_UP
@@ -54,29 +51,27 @@
         };
 
         punctuation_and_numbers {
-            display-name = "Punc&Nums";
+            display-name = "Punc+Nums";
             bindings = <
 &trans    &trans     &kp LS(LBRC)  &kp LS(RBRC)  &kp LS(UNDER)  &kp ASTRK               &kp N7  &kp N8  &kp N9  &as KP_EQUAL PLUS
 &trans    &trans     &kp LS(LPAR)  &kp LS(RPAR)  &kp EQUAL      &kp DOT                 &kp N4  &kp N5  &kp N6  &kp N0
 &kp CAPS  &kp GRAVE  &kp LBKT      &kp RBKT      &kp BSLH       &as BACKSLASH KP_SLASH  &kp N1  &kp N2  &kp N3  &as UNDER MINUS
                      &kp ESC       &kp SPACE     &kp LGUI       &kp TAB                 &mo 4   &trans
             >;
-
-            label = "punct+nums";
         };
 
         fn_keys {
+            display-name = "fn_keys";
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &kp F7  &kp F8  &kp F9  &kp F10
 &trans  &trans  &trans  &trans  &trans  &trans  &kp F4  &kp F5  &kp F6  &kp F11
 &trans  &trans  &trans  &trans  &trans  &trans  &kp F1  &kp F2  &kp F3  &kp F12
                 &trans  &trans  &trans  &trans  &trans  &trans
             >;
-
-            label = "fn";
         };
 
         mod_keys {
+            display-name = "modifiers";
             bindings = <
 &trans    &trans    &trans     &trans      &trans     &trans     &trans      &trans     &trans    &trans
 &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHIFT  &kp K_APP  &kp K_APP  &kp RSHIFT  &kp RCTRL  &kp RALT  &kp RGUI
