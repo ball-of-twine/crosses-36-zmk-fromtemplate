@@ -1,8 +1,17 @@
+#include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
-#include <zephyr/dt-bindings/input/input-event-codes.h>
+
+#define COLEMAK 0
+#define QWERTY 1
+#define MOUSE_NAV 2
+#define PUNC_NUMS 3
+#define FN_KEYS 4
+#define MODIFIERS 5
+#define DYN_MOUSE 7
+
 
 / {
     chosen { zmk,physical-layout = &gggw_crosses_36_layout; };
@@ -22,7 +31,7 @@
         compatible = "zmk,combos";
 
         combo_mods {
-            bindings = <&mo 5>;
+            bindings = <&sl MODIFIERS>;
             key-positions = <30 31>;
         };
     };
@@ -33,10 +42,10 @@
         colemak {
             display-name = "Colemak";
             bindings = <
-&as LS(Q) Q  &as LS(W) W  &as LS(F) F  &as LS(P) P  &as LS(B) B    &as LS(J) J  &as LS(L) L  &as LS(U) U          &as LS(Y) Y            &as LS(SEMICOLON) SEMICOLON
-&as LS(A) A  &as LS(R) R  &as LS(S) S  &as LS(T) T  &as LS(G) G    &as LS(M) M  &as LS(N) N  &as LS(E) E          &as LS(I) I            &as LS(O) O
-&as LS(X) X  &as LS(C) C  &as LS(D) D  &as LS(V) V  &as LS(Z) Z    &as LS(K) K  &as LS(H) H  &as LS(COMMA) COMMA  &as LS(PERIOD) PERIOD  &as LS(SLASH) SLASH
-                          &mo 2        &kp SPACE    &kp BACKSPACE  &kp TAB      &kp RET      &mo 3
+&as LS(Q) Q  &as LS(W) W  &as LS(F) F    &as LS(P) P  &as LS(B) B    &as LS(J) J  &as LS(L) L  &as LS(U) U          &as LS(Y) Y            &as LS(SEMICOLON) SEMICOLON
+&as LS(A) A  &as LS(R) R  &as LS(S) S    &as LS(T) T  &as LS(G) G    &as LS(M) M  &as LS(N) N  &as LS(E) E          &as LS(I) I            &as LS(O) O
+&as LS(X) X  &as LS(C) C  &as LS(D) D    &as LS(V) V  &as LS(Z) Z    &as LS(K) K  &as LS(H) H  &as LS(COMMA) COMMA  &as LS(PERIOD) PERIOD  &as LS(SLASH) SLASH
+                          &mo MOUSE_NAV  &kp SPACE    &kp BACKSPACE  &kp TAB      &kp RET      &mo PUNC_NUMS
             >;
         };
 
@@ -54,7 +63,7 @@
             display-name = "Mouse+Nav";
             bindings = <
 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans  &kp HOME  &kp UP    &kp END    &kp PAGE_UP
-&tog 1        &mkp RCLK     &mkp MCLK     &mkp LCLK     &trans        &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &kp PAGE_DOWN
+&tog QWERTY   &mkp RCLK     &mkp MCLK     &mkp LCLK     &trans        &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &kp PAGE_DOWN
 &trans        &trans        &trans        &trans        &trans        &trans  &trans    &trans    &trans     &trans
                             &trans        &trans        &trans        &trans  &trans    &trans
             >;
@@ -63,10 +72,10 @@
         punctuation_and_numbers {
             display-name = "Punc+Nums";
             bindings = <
-&trans    &trans                          &kp LS(LBRC)  &kp LS(RBRC)  &kp LS(UNDER)  &kp ASTRK               &kp N7  &kp N8  &kp N9  &as KP_EQUAL PLUS
-&trans    &as DOUBLE_QUOTES SINGLE_QUOTE  &kp LS(LPAR)  &kp LS(RPAR)  &kp EQUAL      &kp DOT                 &kp N4  &kp N5  &kp N6  &kp N0
-&kp CAPS  &as GRAVE TILDE                 &kp LBKT      &kp RBKT      &kp BSLH       &as BACKSLASH KP_SLASH  &kp N1  &kp N2  &kp N3  &as UNDER MINUS
-                                          &kp ESC       &kp SPACE     &trans         &kp TAB                 &mo 4   &trans
+&trans    &trans                          &kp LS(LBRC)  &kp LS(RBRC)  &kp LS(UNDER)  &kp ASTRK               &as N7 AMPS    &as N8 ASTRK    &as N9 LPAR   &as EQUAL PLUS
+&trans    &as DOUBLE_QUOTES SINGLE_QUOTE  &kp LS(LPAR)  &kp LS(RPAR)  &kp EQUAL      &kp DOT                 &as N4 DOLLAR  &as N5 PERCENT  &as N6 CARET  &as N0 RPAR
+&kp CAPS  &as GRAVE TILDE                 &kp LBKT      &kp RBKT      &kp BSLH       &as BACKSLASH KP_SLASH  &as N1 EXCL    &as N2 AT       &as N3 POUND  &as UNDER MINUS
+                                          &kp ESC       &trans        &trans         &trans                  &mo FN_KEYS    &trans
             >;
         };
 
