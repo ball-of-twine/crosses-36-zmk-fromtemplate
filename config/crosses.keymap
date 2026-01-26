@@ -12,7 +12,6 @@
 #define MODIFIERS 5
 #define DYN_MOUSE 7
 
-
 / {
     chosen { zmk,physical-layout = &gggw_crosses_36_layout; };
 
@@ -24,6 +23,25 @@
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
+        };
+
+        caps_word: caps_word {
+            compatible = "zmk,behavior-caps-word";
+            label = "CAPS_WORD";
+            #binding-cells = <0>;
+            mods = <(MOD_RSFT)>;
+            continue-list = <UNDERSCORE MINUS>;
+        };
+
+        hmrw: hold_tap_home_row_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_TAP_HOME_ROW_MODS";
+            bindings = <&as>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "balanced";
+            hold-trigger-key-positions = <10 11 12 13 16 17 18 19 14 15>;
         };
     };
 
@@ -102,9 +120,9 @@
         dyn_mouse {
             display-name = "dyn_mouse";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans     &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &mkp LCLK  &mkp MCLK  &mkp RCLK  &msc SCRL_UP
-&trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans     &msc SCRL_DOWN
+&trans  &trans  &trans       &trans  &trans  &trans  &trans     &trans     &trans     &trans
+&trans  &trans  &trans       &trans  &trans  &trans  &mkp LCLK  &mkp MCLK  &mkp RCLK  &msc SCRL_UP
+&trans  &trans  &trans       &trans  &trans  &trans  &trans     &trans     &trans     &msc SCRL_DOWN
                 &to COLEMAK  &trans  &trans  &trans  &trans     &trans
             >;
         };
