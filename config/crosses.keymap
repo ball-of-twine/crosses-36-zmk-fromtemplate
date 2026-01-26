@@ -91,6 +91,7 @@
         };
 
         dyn_mouse {
+            display-name = "dyn_mouse";
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans     &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &mkp LCLK  &mkp MCLK  &mkp RCLK  &msc SCRL_UP
