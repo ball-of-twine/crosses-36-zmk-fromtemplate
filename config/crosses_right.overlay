@@ -7,6 +7,6 @@
 &trackball_central_listener {
   compatible = "zmk,input-listener";
   status = "okay";
-  device = <&trackball_central_split>;
+  device = <&trackball_central>;
   input-processors = <&zip_temp_layer 6 2000>;
 };
