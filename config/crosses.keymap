@@ -60,10 +60,10 @@
         colemak {
             display-name = "Colemak";
             bindings = <
-&as LS(Q) Q  &as LS(W) W  &as LS(F) F    &as LS(P) P  &as LS(B) B    &as LS(J) J  &as LS(L) L  &as LS(U) U          &as LS(Y) Y            &as LS(SEMICOLON) SEMICOLON
-&as LS(A) A  &as LS(R) R  &as LS(S) S    &as LS(T) T  &as LS(G) G    &as LS(M) M  &as LS(N) N  &as LS(E) E          &as LS(I) I            &as LS(O) O
-&as LS(X) X  &as LS(C) C  &as LS(D) D    &as LS(V) V  &as LS(Z) Z    &as LS(K) K  &as LS(H) H  &as LS(COMMA) COMMA  &as LS(PERIOD) PERIOD  &as LS(SLASH) SLASH
-                          &mo MOUSE_NAV  &kp SPACE    &kp BACKSPACE  &kp TAB      &kp RET      &mo PUNC_NUMS
+&as LS(Q) Q                   &as LS(W) W                     &as LS(F) F                     &as LS(P) P         &as LS(B) B  &as LS(J) J        &as LS(L) L               &as LS(U) U                &as LS(Y) Y                  &as LS(SEMICOLON) SEMICOLON
+&hmrw &as LGUI LS(A) A  &hmrw &as LALT LS(R) R          &hmrw &as LCTRL LS(S) S         &hmrw &as LSHIFT LS(T) T  &as LS(G) G  &as LS(M) M  &hmrw &as RSHIFT LS(N) N  &hmrw &as RCTRL LS(E) E    &hmrw &as RALT LS(I) I       &hmrw &as RGUI LS(O) O
+&as LS(X) X                   &as LS(C) C                     &as LS(D) D                     &as LS(V) V         &as LS(Z) Z  &as LS(K) K        &as LS(H) H               &as LS(COMMA) COMMA        &as LS(PERIOD) PERIOD        &as LS(SLASH) SLASH
+                                                                                              &mo MOUSE_NAV       &kp SPACE    &kp BACKSPACE      &kp TAB                   &kp RET                    &mo PUNC_NUMS
             >;
         };
 
