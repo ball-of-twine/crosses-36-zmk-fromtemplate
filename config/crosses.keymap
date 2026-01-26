@@ -16,8 +16,6 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-
-};
     };
 
     combos {
