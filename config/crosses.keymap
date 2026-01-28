@@ -33,16 +33,6 @@
             continue-list = <UNDERSCORE MINUS>;
         };
 
-        hmrw: hold_tap_home_row_mods {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOLD_TAP_HOME_ROW_MODS";
-            bindings = <&as>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "balanced";
-            hold-trigger-key-positions = <10 11 12 13 16 17 18 19 14 15>;
-        };
     };
 
     combos {
@@ -60,10 +50,10 @@
         colemak {
             display-name = "Colemak";
             bindings = <
-&as LS(Q) Q                   &as LS(W) W                     &as LS(F) F                     &as LS(P) P         &as LS(B) B  &as LS(J) J        &as LS(L) L               &as LS(U) U                &as LS(Y) Y                  &as LS(SEMICOLON) SEMICOLON
-&hmrw &as LGUI LS(A) A  &hmrw &as LALT LS(R) R          &hmrw &as LCTRL LS(S) S         &hmrw &as LSHIFT LS(T) T  &as LS(G) G  &as LS(M) M  &hmrw &as RSHIFT LS(N) N  &hmrw &as RCTRL LS(E) E    &hmrw &as RALT LS(I) I       &hmrw &as RGUI LS(O) O
-&as LS(X) X                   &as LS(C) C                     &as LS(D) D                     &as LS(V) V         &as LS(Z) Z  &as LS(K) K        &as LS(H) H               &as LS(COMMA) COMMA        &as LS(PERIOD) PERIOD        &as LS(SLASH) SLASH
-                                                                                              &mo MOUSE_NAV       &kp SPACE    &kp BACKSPACE      &kp TAB                   &kp RET                    &mo PUNC_NUMS
+&kp Q       &kp W       &kp F          &kp P         &kp B            &kp J        &kp L         &kp U        &kp Y       &kp SEMICOLON
+&as LGUI A  &as LALT R  &as LCTRL S    &as LSHIFT T  &as K_APP G      &as K_APP M  &as RSHIFT N  &as RCTRL E  &as RALT I  &as RGUI O
+&kp X       &kp C       &kp D          &kp V         &kp Z            &kp K        &kp H         &kp COMMA    &kp PERIOD  &kp SLASH
+                        &mo MOUSE_NAV  &kp SPACE     &kp BACKSPACE    &kp TAB      &kp RET       &mo PUNC_NUMS
             >;
         };
 
@@ -91,8 +81,8 @@
             display-name = "Punc+Nums";
             bindings = <
 &trans    &trans                          &kp LS(LBRC)  &kp LS(RBRC)  &kp LS(UNDER)  &kp ASTRK               &as AMPS N7    &as ASTRK N8    &as LPAR N9   &as EQUAL PLUS
-&trans    &as DOUBLE_QUOTES SINGLE_QUOTE  &kp LS(LPAR)  &kp LS(RPAR)  &kp EQUAL      &kp DOT                 &as DOLLAR N4  &as PERCENT N5  &as CARET N6  &as RPAR N0
-&kp CAPS  &as GRAVE TILDE                 &kp LBKT      &kp RBKT      &kp BSLH       &as BACKSLASH KP_SLASH  &as EXCL N1    &as AT N2       &as POUND N3  &as UNDER MINUS
+&kp LGUI  &as DOUBLE_QUOTES SINGLE_QUOTE  &kp LS(LPAR)  &kp LS(RPAR)  &kp EQUAL      &kp DOT                 &as DOLLAR N4  &as PERCENT N5  &as CARET N6  &as RPAR N0
+&kp CAPS  &kp GRAVE TILDE                 &kp LBKT      &kp RBKT      &kp BSLH       &as BACKSLASH KP_SLASH  &as EXCL N1    &as AT N2       &as POUND N3  &as UNDER MINUS
                                           &kp ESC       &trans        &trans         &trans                  &mo FN_KEYS    &trans
             >;
         };
@@ -128,3 +118,4 @@
         };
     };
 };
+O
