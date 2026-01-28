@@ -82,7 +82,7 @@
             bindings = <
 &trans    &trans                          &kp LS(LBRC)  &kp LS(RBRC)  &kp LS(UNDER)  &kp ASTRK               &as AMPS N7    &as ASTRK N8    &as LPAR N9   &as EQUAL PLUS
 &kp LGUI  &as DOUBLE_QUOTES SINGLE_QUOTE  &kp LS(LPAR)  &kp LS(RPAR)  &kp EQUAL      &kp DOT                 &as DOLLAR N4  &as PERCENT N5  &as CARET N6  &as RPAR N0
-&kp CAPS  &kp GRAVE TILDE                 &kp LBKT      &kp RBKT      &kp BSLH       &as BACKSLASH KP_SLASH  &as EXCL N1    &as AT N2       &as POUND N3  &as UNDER MINUS
+&kp CAPS  &as GRAVE TILDE                 &kp LBKT      &kp RBKT      &kp BSLH       &as BACKSLASH KP_SLASH  &as EXCL N1    &as AT N2       &as POUND N3  &as UNDER MINUS
                                           &kp ESC       &trans        &trans         &trans                  &mo FN_KEYS    &trans
             >;
         };
