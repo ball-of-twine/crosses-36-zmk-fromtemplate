@@ -10,7 +10,6 @@
 #define PUNC_NUMS 3
 #define FN_KEYS 4
 #define MODIFIERS 5
-#define DYN_MOUSE 7
 
 / {
     chosen { zmk,physical-layout = &gggw_crosses_36_layout; };
@@ -33,6 +32,14 @@
             continue-list = <UNDERSCORE MINUS>;
         };
 
+        mm_bkspdel: modmorph_bkspdel {
+            compatible = "zmk,behavior-mod-morph";
+            label = "modmorph_bkspdel";
+            bindings = <&kp BACKSPACE>, <&kp DEL>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     combos {
@@ -42,6 +49,11 @@
             bindings = <&sl MODIFIERS>;
             key-positions = <30 31>;
         };
+
+        combo_fnkeys {
+            bindings = <&sl FN_KEYS>;
+            key-positions = <34 35>;
+        };
     };
 
     keymap {
@@ -50,10 +62,10 @@
         colemak {
             display-name = "Colemak";
             bindings = <
-&kp Q       &kp W       &kp F          &kp P         &kp B            &kp J        &kp L         &kp U        &kp Y       &kp SEMICOLON
-&as LGUI A  &as LALT R  &as LCTRL S    &as LSHIFT T  &as K_APP G      &as K_APP M  &as RSHIFT N  &as RCTRL E  &as RALT I  &as RGUI O
-&kp X       &kp C       &kp D          &kp V         &kp Z            &kp K        &kp H         &kp COMMA    &kp PERIOD  &kp SLASH
-                        &mo MOUSE_NAV  &kp SPACE     &kp BACKSPACE    &kp TAB      &kp RET       &mo PUNC_NUMS
+&kp Q       &kp W       &kp F          &kp P         &kp B        &kp J        &kp L         &kp U          &kp Y       &kp SEMICOLON
+&as LGUI A  &as LALT R  &as LCTRL S    &as LSHIFT T  &as K_APP G  &as K_APP M  &as RSHIFT N  &as RCTRL E    &as RALT I  &as RGUI O
+&kp X       &kp C       &kp D          &kp V         &kp Z        &kp K        &kp H         &kp COMMA      &kp PERIOD  &kp SLASH
+                        &mo MOUSE_NAV  &kp SPACE     &mm_bkspdel  &kp TAB      &kp RET       &mo PUNC_NUMS
             >;
         };
 
@@ -104,16 +116,6 @@
 &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHIFT  &kp K_APP  &kp K_APP  &kp RSHIFT  &kp RCTRL  &kp RALT  &kp RGUI
 &trans    &trans    &trans     &trans      &trans     &trans     &trans      &trans     &trans    &trans
                     &trans     &trans      &trans     &trans     &trans      &trans
-            >;
-        };
-
-        dyn_mouse {
-            display-name = "dyn_mouse";
-            bindings = <
-&trans  &trans  &trans       &trans  &trans  &trans  &trans     &trans     &trans     &trans
-&trans  &trans  &trans       &trans  &trans  &trans  &mkp LCLK  &mkp MCLK  &mkp RCLK  &msc SCRL_UP
-&trans  &trans  &trans       &trans  &trans  &trans  &trans     &trans     &trans     &msc SCRL_DOWN
-                &to COLEMAK  &trans  &trans  &trans  &trans     &trans
             >;
         };
     };
